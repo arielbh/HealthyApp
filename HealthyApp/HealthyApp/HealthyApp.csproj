@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\WeightEntry.cs" />
     <Compile Include="Effects\ShadowEffect.cs" />
     <Compile Include="Interfaces\IRecipesService.cs" />
     <Compile Include="Interfaces\IWeightAccessService.cs" />

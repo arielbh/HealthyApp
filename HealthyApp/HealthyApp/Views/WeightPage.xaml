@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:controls="clr-namespace:HealthyApp.Controls;assembly=HealthyApp"
              x:Class="HealthyApp.Views.WeightPage"
              Title="Weight"
              mvvm:ViewModelLocator.AutowireViewModel="True">
@@ -19,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Text="New Measure:"/>
-        <Entry x:Name="measureEntry" Grid.Row="1" />
+        <controls:WeightEntry x:Name="measureEntry" Grid.Row="1" />
         <Button Grid.Row="2" Text="Enter" Command="{Binding AddMeasureCommand}" CommandParameter="{Binding Source={x:Reference measureEntry}, Path=Text}"/>
         <Label Grid.Row="3" Text="Last Measures:"/>
         <ListView Grid.Row="4"

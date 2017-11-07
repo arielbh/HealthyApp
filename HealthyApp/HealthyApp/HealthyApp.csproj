@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Effects\ShadowEffect.cs" />
     <Compile Include="Interfaces\IRecipesService.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Services\RecipesService.cs" />

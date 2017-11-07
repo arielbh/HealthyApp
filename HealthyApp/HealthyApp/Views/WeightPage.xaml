@@ -1,16 +1,36 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              x:Class="HealthyApp.Views.WeightPage"
-             Title="Weight">
+             Title="Weight"
+             mvvm:ViewModelLocator.AutowireViewModel="True">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="iOS" Value="8,40,8,0" />
         </OnPlatform>
     </ContentPage.Padding>
-    <ContentPage.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentPage.Content>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Text="New Measure:"/>
+        <Entry x:Name="measureEntry" Grid.Row="1" />
+        <Button Grid.Row="2" Text="Enter" Command="{Binding AddMeasureCommand}" CommandParameter="{Binding Source={x:Reference measureEntry}, Path=Text}"/>
+        <Label Grid.Row="3" Text="Last Measures:"/>
+        <ListView Grid.Row="4"
+                  ItemsSource="{Binding Measures}"
+                  CachingStrategy="RecycleElement">
+            <!--Built in Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Measure}" Detail="{Binding TakenAt}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
 </ContentPage>

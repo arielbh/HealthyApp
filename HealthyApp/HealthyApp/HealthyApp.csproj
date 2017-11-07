@@ -40,7 +40,10 @@
     </Compile>
     <Compile Include="Effects\ShadowEffect.cs" />
     <Compile Include="Interfaces\IRecipesService.cs" />
+    <Compile Include="Interfaces\IWeightAccessService.cs" />
+    <Compile Include="Models\WeightMeasure.cs" />
     <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Services\WeightAccessService.cs" />
     <Compile Include="Services\RecipesService.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\RecipesPageViewModel.cs" />

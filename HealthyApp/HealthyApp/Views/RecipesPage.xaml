@@ -10,9 +10,29 @@
             <On Platform="iOS" Value="8,40,8,0" />
         </OnPlatform>
     </ContentPage.Padding>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello Xamarin.Forms!" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label  Text="Recipes" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <ListView Grid.Row="1"
+                  ItemsSource="{Binding Recipes}"
+                  CachingStrategy="RecycleElement" RowHeight="150" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" 
+                                   Style="{DynamicResource ListItemTextStyle}" />
+                            <Label Text="{Binding Description}" 
+                                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+                            <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="80"/>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>        
 </ContentPage>

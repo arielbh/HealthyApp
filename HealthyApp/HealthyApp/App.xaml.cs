@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HealthyApp.Interfaces;
+using HealthyApp.Services;
 using HealthyApp.Views;
+using Microsoft.Practices.Unity;
 using Prism.Unity;
 using Xamarin.Forms;
 
@@ -22,6 +25,7 @@ namespace HealthyApp
 
         protected override void RegisterTypes()
         {
+            Container.RegisterType<IRecipesService, RecipesService>(new ContainerControlledLifetimeManager());
             Container.RegisterTypeForNavigation<MainPage>();
         }
     }

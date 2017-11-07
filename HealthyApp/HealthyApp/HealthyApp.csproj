@@ -38,6 +38,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IRecipesService.cs" />
+    <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Services\RecipesService.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\RecipesPageViewModel.cs" />
     <Compile Include="ViewModels\WeightPageViewModel.cs" />

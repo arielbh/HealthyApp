@@ -2,33 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using HealthyApp.Views;
+using Prism.Unity;
 using Xamarin.Forms;
 
 namespace HealthyApp
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         public App()
         {
             InitializeComponent();
-
-            MainPage = new HealthyApp.MainPage();
         }
 
-        protected override void OnStart()
+        protected override void OnInitialized()
         {
-            // Handle when your app starts
+            NavigationService.NavigateAsync("MainPage");
         }
 
-        protected override void OnSleep()
+        protected override void RegisterTypes()
         {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
+            Container.RegisterTypeForNavigation<MainPage>();
         }
     }
 }

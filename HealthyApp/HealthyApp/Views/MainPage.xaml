@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<iconize:IconTabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HealthyApp"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+             xmlns:views="clr-namespace:HealthyApp.Views;assembly=HealthyApp"
+             x:Class="HealthyApp.Views.MainPage"
+             mvvm:ViewModelLocator.AutowireViewModel="True">
+    <views:RecipesPage Icon="fa-cutlery" />
+    <views:FluidsPage Icon="fa-glass"/>
+    <views:WeightPage Icon="fa-balance-scale" />
+</iconize:IconTabbedPage>

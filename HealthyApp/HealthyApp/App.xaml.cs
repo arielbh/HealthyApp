@@ -26,7 +26,8 @@ namespace HealthyApp
         protected override void RegisterTypes()
         {
             Container.RegisterType<IRecipesService, RecipesService>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<IWeightAccessService, WeightAccessService>(new ContainerControlledLifetimeManager());
+            var platformSpecific = DependencyService.Get<IWeightAccessService>();
+            Container.RegisterInstance(platformSpecific);
 
             Container.RegisterTypeForNavigation<MainPage>();
         }
